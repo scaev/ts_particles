@@ -18,16 +18,18 @@ export const Design = () => {
     <div>
       {" "}
       <Particles
+        className="w-full h-screen"
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
+          fullScreen: false,
           background: {
-            color: {
-              value: "#0d47a1",
-            },
+            // color: {
+            //   value: "#0d47a1",
+            // },
           },
-          fpsLimit: 120,
+          fpsLimit: 60,
           interactivity: {
             events: {
               onClick: {
@@ -36,7 +38,10 @@ export const Design = () => {
               },
               onHover: {
                 enable: true,
+                //mode: "grab",
                 mode: "repulse",
+
+                distance: 400,
               },
               resize: true,
             },
@@ -45,9 +50,15 @@ export const Design = () => {
                 quantity: 4,
               },
               repulse: {
-                distance: 200,
+                distance: 150,
                 duration: 0.4,
               },
+              // grab: {
+              //   distance: 300,
+              //   link_linked: {
+              //     opacity:0.5,
+              //   }
+              // }
             },
           },
           particles: {
@@ -56,9 +67,9 @@ export const Design = () => {
             },
             links: {
               color: "#ffffff",
-              distance: 150,
+              distance: 120,
               enable: true,
-              opacity: 0.5,
+              opacity: 0.6,
               width: 1,
             },
             collisions: {
@@ -71,13 +82,13 @@ export const Design = () => {
                 default: "bounce",
               },
               random: false,
-              speed: 6,
+              speed: 3,
               straight: false,
             },
             number: {
               density: {
                 enable: true,
-                area: 800,
+                area: 1200,
               },
               value: 80,
             },
@@ -88,7 +99,7 @@ export const Design = () => {
               type: "circle",
             },
             size: {
-              value: { min: 1, max: 5 },
+              value: { min: 1, max: 2 },
             },
           },
           detectRetina: true,
